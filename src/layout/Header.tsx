@@ -4,6 +4,7 @@ import undo from "../assets/icons/undo.svg";
 import redo from "../assets/icons/redo.svg";
 import historyIcon from "../assets/icons/historyLight.svg";
 import eyeIcon from "../assets/icons/eyeIcon.svg";
+import UserProfile from '../components/UserProfile';
 
 const Header = () => {
     return (
@@ -20,16 +21,26 @@ const Header = () => {
                         <img
                             className='w-[16px] h-[14px] object-cover'
                             src={undo} alt="undo" />
-                            </button>
+                    </button>
                     <button className='w-5.5 h-5.5 flex justfy-center items-center outline-none border-none bg-transparent cursor-pointer'>
                         <img
                             className=' w-[20px] h-[18px] object-cover'
                             src={redo} alt="redo" />
-                            </button>
+                    </button>
                 </div>
             </div>
             {/* right side */}
             <div className='flex juctify-center items-center gap-[6px]'>
+                {/* edit  */}
+                <div className='flex justify-start items-center gap-2  relative w-[160px]'>
+                    <p className='text-[12px] font-normal font-[Helvetica Neue] text-[#5B5757] absolute '>Edited 1d ago</p>
+                    <div className='flex justify-center items-center left-[80px] absolute'>
+                        <div className='absolute left-[5px]'>   <UserProfile /></div>
+                        <div className='absolute left-[20px]'>   <UserProfile /></div>
+                        <div className='absolute left-[35px]'>   <UserProfile /></div>
+                        <div className='absolute left-[50px]'>   <UserProfile /></div>
+                    </div>
+                </div>
                 <div className='w-19 h-12 flex justify-center items-center '>
                     <img
                         className='w-[30px] h-[30px] object-cover'
