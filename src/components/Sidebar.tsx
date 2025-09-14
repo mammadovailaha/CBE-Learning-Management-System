@@ -140,7 +140,7 @@ const Sidebar: FC = () => {
     <div className="w-[335px] h-[calc(100vh-5vh)] flex flex-col items-center bg-[#E8E8E6] rounded-[12px] p-6 mt-[30px] ml-3 gap-5 ">
       <div className="w-full flex flex-col items-center border-b border-[#DAD5D5] gap-5 py-5">
         <div className="w-full flex justify-between items-center">
-          <button className="flex justify-center border-none outline-none bg-tansparent items-center gap-1 border-b border-[#DAD5D5] cursor-pointer">
+          <button className="flex justify-center border-b border-[#DAD5D5] outline-none bg-tansparent items-center gap-1 border-b border-[#DAD5D5] cursor-pointer">
             <div className="w-6 h-6 flex justify-center items-center">
               <img
                 className="w-3 h-3 object-cover"
