@@ -1,12 +1,17 @@
-import Sidebar from "../components/Sidebar"
-
+import Sidebar from "../components/Sidebar";
+import Header from "../layout/Header";
 
 const CurriculumLibrary = () => {
   return (
-    <div className="w-full h-full">
-   <Sidebar/>
+    <div className="w-full h-full flex ">
+      <div className="w-[23%]">
+        <Sidebar />
+      </div>
+      <div className="w-[75%]">
+        <Header />
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default CurriculumLibrary
+export default CurriculumLibrary;

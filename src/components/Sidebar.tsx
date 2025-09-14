@@ -76,7 +76,7 @@ const Sidebar: FC = () => {
   // Collapsed state-də göstəriləcək mini sidebar
   if (isCollapsed) {
     return (
-      <div className="w-[108px] min-h-[700px] h-[95%] flex flex-col items-center bg-[#E8E8E6] rounded-[12px] p-4 mt-5  ml-3 gap-6 transition-all delay-150 duration-300 ease-in-out">
+      <div className="w-[108px] h-[calc(100vh-5vh)]  h-[95%] flex flex-col items-center bg-[#E8E8E6] rounded-[12px] p-4 mt-5  ml-3 gap-6 transition-all delay-150 duration-300 ease-in-out">
         {/* Toggle button */}
         <div className="w-11 h-32 flex flex-col justify-center items-center gap-[25px] border-b border-[#BEBFC1]">
           <button
@@ -137,7 +137,7 @@ const Sidebar: FC = () => {
 
   // Normal (açıq) sidebar
   return (
-    <div className="w-[335px] h-screen flex flex-col items-center bg-[#E8E8E6] rounded-[12px] p-6 mt-5 ml-3 gap-5 ">
+    <div className="w-[335px] h-[calc(100vh-5vh)] flex flex-col items-center bg-[#E8E8E6] rounded-[12px] p-6 mt-[30px] ml-3 gap-5 ">
       <div className="w-full flex flex-col items-center border-b border-[#DAD5D5] gap-5 py-5">
         <div className="w-full flex justify-between items-center">
           <button className="flex justify-center border-none outline-none bg-tansparent items-center gap-1 border-b border-[#DAD5D5] cursor-pointer">
