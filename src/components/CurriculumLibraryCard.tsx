@@ -3,9 +3,10 @@ import { GoDotFill } from 'react-icons/go';
 import libraryIcon from "../assets/icons/libraryIcon.svg";
 import { BsThreeDotsVertical } from 'react-icons/bs';
 import ActionsClick from './ActionsClick';
-import deleteIcon from '../assets/icons/deleteIcon.svg';
-import duplicate from '../assets/icons/duplicate.svg';
-import share from "../assets/icons/share.svg";
+import { PiShare } from 'react-icons/pi';
+import { IoDuplicateOutline } from 'react-icons/io5';
+import { HiOutlineTrash } from 'react-icons/hi';
+
 interface CardProps {
     status: string;
     libraryName: string;
@@ -31,7 +32,7 @@ const CurriculumLibraryCard: FC<CardProps> = ({
     // Status-a görə konfiqurasiya
     const statusConfig = {
         draft: {
-            bgColor: 'bg-[#D7D8D5]',
+            bgColor: 'bg-[#BEBFC1]',
             dotColor: 'text-gray-500',
             textColor: 'text-gray-700',
             borderColor:'border-[#5B5757]'
@@ -52,15 +53,15 @@ const CurriculumLibraryCard: FC<CardProps> = ({
 
     const statusStyles = statusConfig[status.toLowerCase() as keyof typeof statusConfig] || statusConfig.draft;
     const actions = [
-        { label: 'Duplicate', value: 'duplicate',icon: duplicate, action: onDuplicate || (() => console.log('Duplicate clicked')) },
-        { label: 'Share', value: 'share',icon:share, action: onShare || (() => console.log('Share clicked')) },
-        { label: 'Delete', value: 'delete',icon:deleteIcon, action: onDelete || (() => console.log('Delete clicked')) },
+        { label: 'Share', value: 'share',icon:<PiShare className='text-[#494947] group-hover:text-white' />, action: onShare || (() => console.log('Share clicked')) },
+        { label: 'Duplicate', value: 'duplicate',icon: <IoDuplicateOutline className='text-[#494947] group-hover:text-white' />, action: onDuplicate || (() => console.log('Duplicate clicked')) },
+        { label: 'Delete', value: 'delete',icon:<HiOutlineTrash  className='text-[#494947] group-hover:text-white'  />, action: onDelete || (() => console.log('Delete clicked')) },
     ];
    
 
     return (
         <div className={`w-[98%] h-[121px] flex flex-col gap-2 px-[18px] py-[20px] rounded-[10px] bg-[#E5E6E1] border border-[#DAD5D5] hover:bg-[#D7D8D5]`}>
-            <span className={`max-w-[30%] py-1 px-2 flex items-center justify-start gap-1 rounded-[15px] text-[10px] font-semibold ${statusStyles.borderColor} ${statusStyles.bgColor}`}>
+            <span className={`max-w-[30%] py-1 px-2 flex items-center justify-start gap-1 rounded-[15px] text-[10px] font-semibold  border ${statusStyles.borderColor} ${statusStyles.bgColor}`}>
                 <GoDotFill className={statusStyles.dotColor} />
                 <span className={`capitalize text-[10px] font-semibold text-[#5B5757] font-[Helvetica Neue] ${statusStyles.textColor}`}>{status}</span>
             </span>

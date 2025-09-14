@@ -1,9 +1,9 @@
-import  {  type FC, useRef, useEffect } from 'react'
+import  {  type FC, useRef, useEffect, type JSX } from 'react'
 
 interface ActionItem {
     label: string;
     value: string;
-    icon:string;
+    icon: string | JSX.Element;
     action: () => void;
 }
 
@@ -46,10 +46,15 @@ const ActionsClick: FC<ActionsClickProps> = ({ actions, onClose }) => {
                     className={`group px-4 py-2 text-xs font-semibold text-[#494947] hover:bg-[#2463EB] hover:text-white rounded-[4px] px-[6px] py-1 
                         cursor-pointer flex justify-start items-center gap-2 font-[Helvetica Neue] ${ index !== 0 ? "border-t border-[#BEBFC1]" : ""}`}
                 >
-                  <img
-                  className='w-3 h-3 object-cover'
-                   src={actionItem.icon}
-                    alt={actionItem.label} />  {actionItem.label}
+                  {typeof actionItem.icon === 'string' ? (
+                    <img
+                      className='w-3 h-3 object-cover'
+                      src={actionItem.icon}
+                      alt={actionItem.label}
+                    />
+                  ) : (
+                    actionItem.icon
+                  )}  {actionItem.label}
                 </li>
             ))}
         </ul>
